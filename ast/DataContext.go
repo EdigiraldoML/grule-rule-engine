@@ -17,12 +17,15 @@ package ast
 //go:generate mockgen -destination=../mocks/ast/DataContext.go -package=mocksAst . IDataContext
 
 import (
-	"github.com/hyperjumptech/grule-rule-engine/model"
+	"fmt"
 	"reflect"
+
+	"github.com/hyperjumptech/grule-rule-engine/model"
 )
 
 // NewDataContext will create a new DataContext instance
 func NewDataContext() IDataContext {
+	fmt.Println("Today is viernes!!")
 	return &DataContext{
 		ObjectStore: make(map[string]model.ValueNode),
 
